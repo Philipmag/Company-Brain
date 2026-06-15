@@ -13,11 +13,16 @@ export interface SessionContext {
 
 /** Returns the authenticated auth user id, or null if not signed in. */
 export async function getAuthUserId(): Promise<string | null> {
-  const supabase = createClient();
-  const {
-    data: { user },
-  } = await supabase.auth.getUser();
-  return user?.id ?? null;
+  try {
+    const supabase = createClient();
+    const {
+      data: { user },
+    } = await supabase.auth.getUser();
+    return user?.id ?? null;
+  } catch {
+    // Supabase unreachable (e.g. placeholder config in a preview env).
+    return null;
+  }
 }
 
 /**
@@ -26,9 +31,13 @@ export async function getAuthUserId(): Promise<string | null> {
  */
 export async function getSession(): Promise<SessionContext | null> {
   const supabase = createClient();
-  const {
-    data: { user: authUser },
-  } = await supabase.auth.getUser();
+  let authUser;
+  try {
+    const result = await supabase.auth.getUser();
+    authUser = result.data.user;
+  } catch {
+    return null;
+  }
   if (!authUser) return null;
 
   const { data: user } = await supabase

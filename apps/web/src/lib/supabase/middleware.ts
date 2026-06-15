@@ -29,6 +29,11 @@ export async function updateSession(request: NextRequest): Promise<NextResponse>
     },
   );
 
-  await supabase.auth.getUser();
+  try {
+    await supabase.auth.getUser();
+  } catch {
+    // Supabase may be unreachable (e.g. placeholder config in a preview env).
+    // Don't crash every request — just skip the session refresh.
+  }
   return response;
 }

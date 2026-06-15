@@ -39,6 +39,18 @@ hash) → `chunk-document` (500-token chunks, 75 overlap, table-aware) →
 filtered by the asker's groups both in SQL RPCs and via Postgres Row-Level
 Security, so a user can never retrieve content outside their groups.
 
+> See [`docs/ARCHITECTURE.md`](docs/ARCHITECTURE.md) for the full repository
+> layout and request/ingestion flow diagrams.
+
+## Previewing the app
+
+```bash
+pnpm preview   # boots the Next.js dev server on http://localhost:3000
+```
+
+The app boots even without real Supabase credentials (the landing/login UI
+renders); sign-in and data features require the env vars described below.
+
 ---
 
 ## Prerequisites

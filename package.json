@@ -5,6 +5,7 @@
   "description": "Company Brain Lite — an MVP AI knowledge assistant that connects Google Drive and Slack and answers questions with cited, permission-aware answers.",
   "scripts": {
     "dev": "pnpm --filter @company-brain/web dev",
+    "preview": "pnpm --filter @company-brain/web preview",
     "dev:worker": "pnpm --filter @company-brain/worker dev",
     "build": "pnpm --filter @company-brain/shared build && pnpm --filter @company-brain/web build && pnpm --filter @company-brain/worker build",
     "typecheck": "pnpm -r typecheck",
