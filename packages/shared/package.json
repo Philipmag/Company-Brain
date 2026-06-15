@@ -1,0 +1,28 @@
+{
+  "name": "@company-brain/shared",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "main": "./src/index.ts",
+  "types": "./src/index.ts",
+  "exports": {
+    ".": "./src/index.ts",
+    "./*": "./src/*.ts"
+  },
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "typecheck": "tsc -p tsconfig.json --noEmit"
+  },
+  "dependencies": {
+    "@anthropic-ai/sdk": "^0.32.1",
+    "@supabase/supabase-js": "^2.45.4",
+    "bullmq": "^5.21.2",
+    "cohere-ai": "^7.14.0",
+    "ioredis": "^5.4.1",
+    "js-tiktoken": "^1.0.15",
+    "openai": "^4.67.3"
+  },
+  "devDependencies": {
+    "typescript": "^5.6.3"
+  }
+}

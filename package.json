@@ -1,0 +1,18 @@
+{
+  "name": "company-brain-lite",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Company Brain Lite — an MVP AI knowledge assistant that connects Google Drive and Slack and answers questions with cited, permission-aware answers.",
+  "scripts": {
+    "dev": "pnpm --filter @company-brain/web dev",
+    "dev:worker": "pnpm --filter @company-brain/worker dev",
+    "build": "pnpm --filter @company-brain/shared build && pnpm --filter @company-brain/web build && pnpm --filter @company-brain/worker build",
+    "typecheck": "pnpm -r typecheck",
+    "lint": "pnpm -r lint",
+    "redis": "docker compose up -d redis"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "packageManager": "pnpm@9.12.0"
+}
