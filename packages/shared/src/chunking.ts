@@ -10,7 +10,7 @@ import {
   CHUNK_TARGET_TOKENS,
   CHUNK_OVERLAP_TOKENS,
   TABLE_MAX_TOKENS,
-} from "./constants.js";
+} from "./constants";
 
 let enc: Tiktoken | null = null;
 function encoder(): Tiktoken {

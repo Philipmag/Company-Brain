@@ -4,15 +4,15 @@
  * - Haiku for query rewriting
  */
 import Anthropic from "@anthropic-ai/sdk";
-import { env } from "./env.js";
-import { ANSWER_MODEL, REWRITE_MODEL } from "./constants.js";
+import { env } from "./env";
+import { ANSWER_MODEL, REWRITE_MODEL } from "./constants";
 import {
   buildAnswerSystemPrompt,
   buildAnswerUserPrompt,
   buildRewritePrompt,
   type ConversationTurn,
-} from "./prompts.js";
-import type { RetrievedContext } from "./types.js";
+} from "./prompts";
+import type { RetrievedContext } from "./types";
 
 let client: Anthropic | null = null;
 

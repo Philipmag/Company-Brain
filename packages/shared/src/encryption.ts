@@ -6,7 +6,7 @@
  * Wire format (base64): [12-byte IV][16-byte auth tag][ciphertext]
  */
 import { createCipheriv, createDecipheriv, randomBytes } from "node:crypto";
-import { requireEnv } from "./env.js";
+import { requireEnv } from "./env";
 
 const ALGORITHM = "aes-256-gcm";
 const IV_LENGTH = 12;

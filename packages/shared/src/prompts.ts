@@ -1,7 +1,7 @@
 /**
  * Prompt templates (spec §6.4 / §6.5).
  */
-import type { RetrievedContext } from "./types.js";
+import type { RetrievedContext } from "./types";
 
 export interface ConversationTurn {
   role: "user" | "assistant";

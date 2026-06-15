@@ -6,9 +6,8 @@ export const billingEnabled = boolEnv("BILLING_ENABLED", false);
 let stripe: Stripe | null = null;
 export function getStripe(): Stripe {
   if (!stripe) {
-    stripe = new Stripe(optionalEnv("STRIPE_SECRET_KEY"), {
-      apiVersion: "2024-09-30.acacia",
-    });
+    // Use the SDK's pinned API version (avoids drift between SDK + literal).
+    stripe = new Stripe(optionalEnv("STRIPE_SECRET_KEY"));
   }
   return stripe;
 }

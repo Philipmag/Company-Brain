@@ -2,8 +2,8 @@
  * OpenAI embeddings (text-embedding-3-small, 1536 dims) — spec §6.1.
  */
 import OpenAI from "openai";
-import { env } from "./env.js";
-import { EMBEDDING_MODEL, EMBED_BATCH_SIZE } from "./constants.js";
+import { env } from "./env";
+import { EMBEDDING_MODEL, EMBED_BATCH_SIZE } from "./constants";
 
 let client: OpenAI | null = null;
 

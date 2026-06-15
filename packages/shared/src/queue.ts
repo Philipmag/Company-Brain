@@ -2,8 +2,8 @@
  * BullMQ queue names, job payloads, and shared connection options (spec §6.1).
  */
 import { Queue, type ConnectionOptions, type JobsOptions } from "bullmq";
-import { env } from "./env.js";
-import { JOB_ATTEMPTS, JOB_BACKOFF_DELAYS_MS } from "./constants.js";
+import { env } from "./env";
+import { JOB_ATTEMPTS, JOB_BACKOFF_DELAYS_MS } from "./constants";
 
 export const QUEUE_NAMES = {
   syncConnection: "sync-connection",

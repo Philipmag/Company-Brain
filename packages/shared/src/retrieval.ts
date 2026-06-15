@@ -7,17 +7,17 @@
  * own org_id and visibility_group_ids — never client-supplied values that could
  * widen access.
  */
-import { getAdminClient } from "./supabase.js";
-import { embedText, toPgVector } from "./embeddings.js";
-import { rerank } from "./rerank.js";
+import { getAdminClient } from "./supabase";
+import { embedText, toPgVector } from "./embeddings";
+import { rerank } from "./rerank";
 import {
   VECTOR_SEARCH_LIMIT,
   KEYWORD_SEARCH_LIMIT,
   RERANK_TOP_N,
   RERANK_SCORE_THRESHOLD,
   CURATED_SIMILARITY_THRESHOLD,
-} from "./constants.js";
-import type { RetrievedContext, SourceType } from "./types.js";
+} from "./constants";
+import type { RetrievedContext, SourceType } from "./types";
 
 interface RpcChunkRow {
   chunk_id: string;

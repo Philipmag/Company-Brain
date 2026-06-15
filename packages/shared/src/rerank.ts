@@ -2,8 +2,8 @@
  * Cohere Rerank (rerank-english-v3.0) — spec §6.3 step 4.
  */
 import { CohereClient } from "cohere-ai";
-import { env } from "./env.js";
-import { RERANK_MODEL, RERANK_TOP_N } from "./constants.js";
+import { env } from "./env";
+import { RERANK_MODEL, RERANK_TOP_N } from "./constants";
 
 let client: CohereClient | null = null;
 

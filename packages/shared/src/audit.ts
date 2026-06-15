@@ -1,9 +1,9 @@
 /**
  * Audit logging + knowledge-gap upsert helpers (spec §6.6 / §8).
  */
-import { getAdminClient } from "./supabase.js";
-import { normalizeQuestion } from "./retrieval.js";
-import { KNOWLEDGE_GAP_SIMILARITY_THRESHOLD } from "./constants.js";
+import { getAdminClient } from "./supabase";
+import { normalizeQuestion } from "./retrieval";
+import { KNOWLEDGE_GAP_SIMILARITY_THRESHOLD } from "./constants";
 
 export async function writeAudit(
   orgId: string,
